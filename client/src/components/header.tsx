@@ -54,15 +54,46 @@ export function Header({ onSearchChange, onCartToggle }: HeaderProps) {
               <Link href="/" className="text-foreground hover:text-primary font-medium" data-testid="link-home">
                 Home
               </Link>
-              <Link href="/" className="text-muted-foreground hover:text-foreground" data-testid="link-products">
+              <button 
+                onClick={() => {
+                  const productsSection = document.getElementById('products-section');
+                  if (productsSection) {
+                    productsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-muted-foreground hover:text-foreground" 
+                data-testid="link-products"
+              >
                 Products
-              </Link>
-              <Link href="/" className="text-muted-foreground hover:text-foreground" data-testid="link-about">
+              </button>
+              <button 
+                onClick={() => {
+                  const aboutSection = document.getElementById('about-section');
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    alert('About section coming soon!');
+                  }
+                }}
+                className="text-muted-foreground hover:text-foreground" 
+                data-testid="link-about"
+              >
                 About
-              </Link>
-              <Link href="/" className="text-muted-foreground hover:text-foreground" data-testid="link-contact">
+              </button>
+              <button 
+                onClick={() => {
+                  const contactSection = document.getElementById('contact-section');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    alert('Contact: support@techstore.com | Phone: (555) 123-4567');
+                  }
+                }}
+                className="text-muted-foreground hover:text-foreground" 
+                data-testid="link-contact"
+              >
                 Contact
-              </Link>
+              </button>
             </nav>
             
             {/* Cart Button */}
